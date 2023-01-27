@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>User Login</title>
+    <link rel="stylesheet" href="/static/userstyle.css">
+  </head>
+  <body>
+    <div class="center">
+      <h1>Employee Login</h1>
+      <form action = "/checkuserlogin" method = "post"> {% csrf_token %}
+        <div class="txt_field">
+          <input type="email" name = "email" id = "email" required>
+          <span></span>
+          <label>Email</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" name = "password" id = "password" required>
+          <span></span>
+          <label>Password</label>
+        </div>
+
+        <input type="submit" value="Log in">
+        <br>
+       <div style = "display:flex;justify-content:center;align-items:center;margin-bottom:20px;">
+        {{msg}}
+       </div>
+      </form>
+    </div>
+
+  </body>
+</html>
